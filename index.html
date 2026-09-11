@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jejak Kopi Kita | Rasa, Cerita & Perjalanan</title>
+
+<meta name="description" content="Jejak Kopi Kita - Temukan kopi terbaik, cerita, filosofi dan pengalaman kopi Nusantara.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fffaf4;
+    color: #34251d;
+    line-height: 1.6;
+}
+
+button, input, select {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+:root {
+    --coffee: #8a5a38;
+    --coffee-dark: #4b2d1c;
+    --coffee-light: #c89562;
+    --cream: #fffaf4;
+    --cream-2: #f5eadc;
+    --cream-3: #ead9c7;
+    --white: #ffffff;
+    --text: #34251d;
+    --muted: #76675d;
+    --border: #e9dac9;
+    --green: #54745a;
+    --shadow: 0 15px 45px rgba(82, 51, 32, 0.10);
+    --shadow-hover: 0 25px 60px rgba(82, 51, 32, 0.16);
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--coffee);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--coffee-dark);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+.topbar {
+    background: var(--coffee-dark);
+    color: white;
+    padding: 9px 20px;
+    font-size: 0.82rem;
+}
+
+.topbar-inner {
+    max-width: 1180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar-left, .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.topbar a:hover {
+    color: #edc49c;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(255, 250, 244, 0.94);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(233, 218, 201, 0.9);
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--coffee), var(--coffee-light));
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: 0 8px 20px rgba(138,90,56,.22);
+}
+
+.logo-text {
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--coffee-dark);
+}
+
+.logo-text span {
+    color: var(--coffee);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 9px 11px;
+    border-radius: 9px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--coffee);
+    background: #f4e7d9;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-btn, .login-btn {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--coffee-dark);
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .25s;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+
+.icon-btn:hover, .login-btn:hover {
+    border-color: var(--coffee-light);
+    background: #f8eee4;
+}
+
+.login-btn {
+    border: none;
+    background: var(--coffee);
+    color: white;
+}
+
+.login-btn:hover {
+    background: var(--coffee-dark);
+    transform: translateY(-2px);
+}
+
+.badge-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #d9534f;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+    min-height: 780px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(255,250,244,.97) 0%, rgba(255,250,244,.90) 43%, rgba(255,250,244,.35) 100%), url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=85&w=1800&auto=format&fit=crop") center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,.75);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 30px;
+    color: var(--coffee);
+    font-size: .78rem;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: .98;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--coffee);
+}
+
+.hero-description {
+    max-width: 620px;
+    color: #66564b;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 20px;
+    border-radius: 11px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: .88rem;
+    transition: .25s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #8a5a38, #b97d4d);
+    color: white;
+    box-shadow: 0 10px 25px rgba(138,90,56,.22);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-light {
+    background: white;
+    color: var(--coffee-dark);
+    border: 1px solid var(--border);
+}
+
+.btn-light:hover {
+    background: #f7ecdf;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 45px;
+    flex-wrap: wrap;
+}
+
+.stat strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    font-size: 1.7rem;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: .78rem;
+}
+
+/* =========================================================
+   CONTACT STRIP
+========================================================= */
+.contact-strip {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 5px 25px rgba(82,51,32,.05);
+}
+
+.contact-grid {
+    min-height: 72px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-right: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .86rem;
+}
+
+.contact-item:last-child {
+    border-right: none;
+}
+
+.contact-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: #f6eadc;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--coffee-dark);
+    font-size: .88rem;
+}
+
+.contact-item a {
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: var(--coffee);
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+#about {
+    background: #fffaf4;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+.about-badge {
+    position: absolute;
+    right: -25px;
+    bottom: 35px;
+    background: white;
+    padding: 20px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    max-width: 210px;
+}
+
+.about-badge strong {
+    color: var(--coffee);
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+}
+
+.about-badge span {
+    display: block;
+    color: var(--muted);
+    font-size: .78rem;
+}
+
+.about-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    color: var(--coffee-dark);
+    line-height: 1.1;
+    margin: 10px 0 20px;
+}
+
+.about-text > p {
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.feature {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 15px;
+}
+
+.feature-icon {
+    font-size: 1.4rem;
+    margin-bottom: 7px;
+}
+
+.feature strong {
+    display: block;
+    color: var(--coffee-dark);
+    margin-bottom: 3px;
+}
+
+.feature span {
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+#filosofi {
+    background: #f6eee5;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.philosophy-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .35s;
+    box-shadow: 0 8px 25px rgba(82,51,32,.05);
+}
+
+.philosophy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.philosophy-image {
+    height: 210px;
+    overflow: hidden;
+}
+
+.philosophy-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.philosophy-card:hover img {
+    transform: scale(1.06);
+}
+
+.philosophy-content {
+    padding: 22px;
+}
+
+.philosophy-content small {
+    color: var(--coffee);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.philosophy-content h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    font-size: 1.5rem;
+    margin: 6px 0 8px;
+}
+
+.philosophy-content p {
+    color: var(--muted);
+    font-size: .86rem;
+}
+
+/* =========================================================
+   PRODUCTS & STORE EQUIPMENT SECTION
+========================================================= */
+#produk {
+    background: #fffaf4;
+}
+
+.store-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.store-tab-btn {
+    background: #f4e7d9;
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--coffee-dark);
+    transition: 0.2s;
+}
+
+.store-tab-btn.active, .store-tab-btn:hover {
+    background: var(--coffee);
+    color: white;
+    border-color: var(--coffee);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .35s;
+    box-shadow: 0 8px 25px rgba(82,51,32,.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: #f3e8db;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+.product-tag {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background: rgba(255,255,255,.92);
+    color: var(--coffee);
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: .65rem;
+    font-weight: 800;
+}
+
+.product-info {
+    padding: 19px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-info h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    font-size: 1.15rem;
+}
+
+.product-origin {
+    color: var(--coffee);
+    font-size: .72rem;
+    font-weight: 800;
+    margin: 3px 0 8px;
+}
+
+.product-info p {
+    color: var(--muted);
+    font-size: .8rem;
+    flex: 1;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.price {
+    color: var(--coffee-dark);
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.buy-button {
+    border: none;
+    background: var(--coffee);
+    color: white;
+    padding: 9px 13px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: .73rem;
+    transition: 0.2s;
+}
+
+.buy-button:hover {
+    background: var(--coffee-dark);
+}
+
+/* =========================================================
+   AI ASSISTANT STYLING (LENGKAP INTERAKTIF)
+========================================================= */
+#ai-assistant {
+    background: #fdf8f2;
+}
+
+.ai-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    max-width: 850px;
+    margin: auto;
+}
+
+.ai-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    gap: 15px;
+}
+
+.ai-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-icon {
+    width: 45px;
+    height: 45px;
+    background: #f5eadc;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+}
+
+.ai-title h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    font-size: 1.2rem;
+}
+
+.ai-title span {
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.ai-limit {
+    background: #e8f5e9;
+    color: var(--green);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.ai-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.ai-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.ai-form input:focus {
+    border-color: var(--coffee);
+}
+
+.ai-result {
+    background: #f6eee5;
+    border-left: 4px solid var(--coffee);
+    padding: 16px;
+    border-radius: 0 11px 11px 0;
+    color: var(--coffee-dark);
+    font-size: 0.88rem;
+}
+
+/* =========================================================
+   MEMBERSHIP
+========================================================= */
+#membership {
+    background: #fffaf4;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 850px;
+    margin: auto;
+    gap: 25px;
+}
+
+.membership-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.membership-card.featured {
+    border: 2px solid var(--coffee-light);
+}
+
+.vip-label {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #f2dfca;
+    color: var(--coffee);
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: .65rem;
+    font-weight: 800;
+}
+
+.membership-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: var(--coffee-dark);
+}
+
+.member-price {
+    color: var(--coffee);
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 12px 0 20px;
+}
+
+.member-price span {
+    font-family: "DM Sans", sans-serif;
+    font-size: .8rem;
+    color: var(--muted);
+}
+
+.membership-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.membership-card li {
+    color: var(--muted);
+    font-size: .86rem;
+    margin: 10px 0;
+}
+
+.membership-card li::before {
+    content: "✓";
+    color: var(--green);
+    font-weight: 800;
+    margin-right: 9px;
+}
+
+/* =========================================================
+   BREWING SECTION (TIPS SEDUH TERKINI)
+========================================================= */
+#brewing {
+    background: #f6eee5;
+}
+
+.brewing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.brewing-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 8px 25px rgba(82,51,32,.05);
+    transition: .3s;
+}
+
+.brewing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.brewing-badge {
+    display: inline-block;
+    background: #f2e2d1;
+    color: var(--coffee);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.brewing-card h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    font-size: 1.35rem;
+}
+
+.brewing-card p {
+    color: var(--muted);
+    font-size: .83rem;
+    margin: 8px 0 15px;
+}
+
+.brewing-card ul {
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: .8rem;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+#contact {
+    background: linear-gradient(rgba(74,45,28,.91), rgba(74,45,28,.96)), url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=85&w=1800&auto=format&fit=crop") center/cover no-repeat;
+    color: white;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.contact-section p {
+    color: #dbc8b8;
+    line-height: 1.8;
+}
+
+.contact-info-card {
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.contact-info-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.contact-info-row:last-child {
+    border-bottom: none;
+}
+
+.contact-info-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,.12);
+}
+
+.contact-info-row strong {
+    display: block;
+    color: white;
+}
+
+.contact-info-row span {
+    color: #d5c1af;
+    font-size: .82rem;
+}
+
+/* =========================================================
+   MODALS (LOGIN & SHOPPING CART)
+========================================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    width: min(450px, 90%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-hover);
+    position: relative;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.modal-content h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--coffee-dark);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--coffee-dark);
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--coffee);
+}
+
+.cart-items-container {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--coffee-dark);
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+    background: #2d1d13;
+    color: #cdbbad;
+    padding: 45px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 35px;
+}
+
+.footer-brand h3 {
+    font-family: "Playfair Display", serif;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: #a99586;
+    max-width: 350px;
+    font-size: .85rem;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 13px;
+}
+
+.footer-column a {
+    display: block;
+    text-decoration: none;
+    color: #a99586;
+    font-size: .82rem;
+    margin: 8px 0;
+}
+
+.footer-column a:hover {
+    color: #e6bb91;
+}
+
+.footer-bottom {
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: .75rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+   TOP BAR
+========================================================= -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="topbar-left">
+            <span>☕ Kopi Nusantara, cerita di setiap cangkir.</span>
+        </div>
+        <div class="topbar-right">
+            <span>🕐 Buka setiap hari: <strong>08.00 – 22.30</strong></span>
+            <a href="https://instagram.com/jejakkopikita" target="_blank" rel="noopener noreferrer">📸 @jejakkopikita</a>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+   NAVBAR
+========================================================= -->
+<header>
+    <div class="container navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">☕</div>
+            <div class="logo-text">Jejak Kopi <span>Kita</span></div>
+        </a>
+        <nav>
+            <a href="#about">Tentang</a>
+            <a href="#filosofi">Filosofi</a>
+            <a href="#produk">Katalog & Alat</a>
+            <a href="#ai-assistant">Tanya AI</a>
+            <a href="#membership">Membership</a>
+            <a href="#brewing">Tips Seduh</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="icon-btn" onclick="openCart()" title="Keranjang Belanja">
+                🛒 <span class="badge-count" id="cartBadge">0</span>
+            </button>
+            <button class="login-btn" id="loginNavBtn" onclick="openLogin()">Masuk</button>
+        </div>
+    </div>
+</header>
+
+<!-- =========================================================
+   HERO SECTION
+========================================================= -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-label">
+                ✨ Pengalaman Kopi Terbaik Nusantara
+            </div>
+            <h1>Menyatu dengan <span>Rasa & Cerita</span> Kopi</h1>
+            <p class="hero-description">
+                Jelajahi kelezatan biji kopi pilihan dari Sabang sampai Merauke beserta peralatan seduh modern terbaik.
+            </p>
+            <div class="hero-buttons">
+                <a href="#produk" class="btn btn-primary">Belanja Sekarang ☕</a>
+                <a href="#about" class="btn btn-light">Tentang Kami</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>15+</strong>
+                    <span>Asal Kopi</span>
+                </div>
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Arabika & Robusta Asli</span>
+                </div>
+                <div class="stat">
+                    <strong>5.000+</strong>
+                    <span>Pelanggan Setia</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   CONTACT STRIP
+========================================================= -->
+<div class="contact-strip">
+    <div class="container contact-grid">
+        <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+                <strong>Lokasi Kedai</strong>
+                <span>Jl. Malioboro No. 45, Yogyakarta</span>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+                <strong>WhatsApp Pemesanan</strong>
+                <a href="https://wa.me/6283861842063" target="_blank" rel="noopener noreferrer">+62 838-6184-2063</a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">⭐</div>
+            <div>
+                <strong>Rating Kepuasan</strong>
+                <span>4.9 / 5.0 dari Google Review</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+   ABOUT SECTION
+========================================================= -->
+<section id="about">
+    <div class="container about-grid">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=85&w=1000&auto=format&fit=crop" alt="Suasana Kedai Kopi">
+            <div class="about-badge">
+                <strong>Sejak 2021</strong>
+                <span>Menemani pagi & malam pencinta kopi</span>
+            </div>
+        </div>
+        <div class="about-text">
+            <span class="section-label">Tentang Kami</span>
+            <h2>Perjalanan Rasa Dari Biji Pilihan</h2>
+            <p>
+                Jejak Kopi Kita lahir dari kecintaan mendalam terhadap kekayaan alam Indonesia. Kami bekerja sama secara langsung dengan petani lokal di berbagai dataran tinggi Nusantara untuk menghadirkan biji kopi berkualitas tinggi.
+            </p>
+            <div class="about-features">
+                <div class="feature">
+                    <div class="feature-icon">🌱</div>
+                    <strong>Direct Trade</strong>
+                    <span>Mendukung kesejahteraan petani lokal.</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔥</div>
+                    <strong>Fresh Roast</strong>
+                    <span>Dipanggang berkala untuk menjaga aroma.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   PHILOSOPHY SECTION
+========================================================= -->
+<section id="filosofi">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Filosofi</span>
+            <h2>Tiga Pilar Jejak Kopi Kita</h2>
+            <p>Nilai yang kami pegang teguh dalam menyajikan setiap cangkir kopi untuk Anda.</p>
+        </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <div class="philosophy-image">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=85&w=800&auto=format&fit=crop" alt="Autentisitas">
+                </div>
+                <div class="philosophy-content">
+                    <small>PILAR 01</small>
+                    <h3>Autentisitas Rasa</h3>
+                    <p>Menjaga karakter asli dari tanah asal kopi tanpa rekayasa rasa berlebihan.</p>
+                </div>
+            </div>
+            <div class="philosophy-card">
+                <div class="philosophy-image">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=85&w=800&auto=format&fit=crop" alt="Komunitas">
+                </div>
+                <div class="philosophy-content">
+                    <small>PILAR 02</small>
+                    <h3>Koneksi & Komunitas</h3>
+                    <p>Menjadi ruang temu bagi para pencinta kopi untuk berbagi cerita dan inspirasi.</p>
+                </div>
+            </div>
+            <div class="philosophy-card">
+                <div class="philosophy-image">
+                    <img src="https://images.unsplash.com/photo-1507133754941-26a319f35c5c?q=85&w=800&auto=format&fit=crop" alt="Keberlanjutan">
+                </div>
+                <div class="philosophy-content">
+                    <small>PILAR 03</small>
+                    <h3>Keberlanjutan</h3>
+                    <p>Komitmen menjaga lingkungan dan kesejahteraan ekosistem industri kopi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   PRODUCTS & STORE EQUIPMENT SECTION
+========================================================= -->
+<section id="produk">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Toko & Katalog</span>
+            <h2>Biji Kopi & Peralatan Kopi Nusantara</h2>
+            <p>Pilih biji kopi atau alat seduh favoritmu. Sistem belanja ala E-Commerce (Wajib login sebelum checkout).</p>
+        </div>
+
+        <!-- Store Tabs -->
+        <div class="store-tabs">
+            <button class="store-tab-btn active" onclick="switchStoreTab('coffee')">Biji Kopi Nusantara</button>
+            <button class="store-tab-btn" onclick="switchStoreTab('equipment')">Alat Seduh & Aksesoris</button>
+        </div>
+
+        <!-- Biji Kopi Grid -->
+        <div class="products-grid" id="coffeeStore">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Arabika</span>
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=85&w=600&auto=format&fit=crop" alt="Gayo Aceh">
+                </div>
+                <div class="product-info">
+                    <h3>Gayo Aceh</h3>
+                    <div class="product-origin">Tanoh Gayo, Aceh</div>
+                    <p>Aroma herbal yang kuat dengan tingkat keasaman seimbang dan aftertaste bersih.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 85.000</span>
+                        <button class="buy-button" onclick="addToCart('Gayo Aceh', 85000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Arabika</span>
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=85&w=600&auto=format&fit=crop" alt="Kintamani Bali">
+                </div>
+                <div class="product-info">
+                    <h3>Kintamani Bali</h3>
+                    <div class="product-origin">Kintamani, Bali</div>
+                    <p>Karakter rasa buah (fruity) jeruk segar dengan keasaman yang cerah dan ringan.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 90.000</span>
+                        <button class="buy-button" onclick="addToCart('Kintamani Bali', 90000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Robusta</span>
+                    <img src="https://images.unsplash.com/photo-1587049352847-4a222e784d38?q=85&w=600&auto=format&fit=crop" alt="Robusta Temanggung">
+                </div>
+                <div class="product-info">
+                    <h3>Robusta Temanggung</h3>
+                    <div class="product-origin">Temanggung, Jawa Tengah</div>
+                    <p>Body tebal, pekat, dengan aroma tembakau halus dan sentuhan cokelat pahit manis.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 75.000</span>
+                        <button class="buy-button" onclick="addToCart('Robusta Temanggung', 75000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Arabika</span>
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=85&w=600&auto=format&fit=crop" alt="Toraja Kalossi">
+                </div>
+                <div class="product-info">
+                    <h3>Toraja Kalossi</h3>
+                    <div class="product-origin">Toraja, Sulawesi Selatan</div>
+                    <p>Rasa earthy yang khas dengan sentuhan rempah-rempah hangat yang memanjakan lidah.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 95.000</span>
+                        <button class="buy-button" onclick="addToCart('Toraja Kalossi', 95000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Store Grid (Hidden by default) -->
+        <div class="products-grid" id="equipmentStore" style="display: none;">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Alat Seduh</span>
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=85&w=600&auto=format&fit=crop" alt="V60 Dripper Set">
+                </div>
+                <div class="product-info">
+                    <h3>V60 Dripper Set</h3>
+                    <div class="product-origin">Ceramic Dripper + Server</div>
+                    <p>Alat seduh manual pour-over paling populer untuk rasa kopi yang bersih dan jernih.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 165.000</span>
+                        <button class="buy-button" onclick="addToCart('V60 Dripper Set', 165000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Grinder</span>
+                    <img src="https://images.unsplash.com/photo-1589396113702-da979101297d?q=85&w=600&auto=format&fit=crop" alt="Manual Coffee Grinder">
+                </div>
+                <div class="product-info">
+                    <h3>Manual Coffee Grinder</h3>
+                    <div class="product-origin">Stainless Steel Burr</div>
+                    <p>Penggiling biji kopi portabel dengan hasil gilingan presisi & konsisten untuk manual brew.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 145.000</span>
+                        <button class="buy-button" onclick="addToCart('Manual Coffee Grinder', 145000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Alat Seduh</span>
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=85&w=600&auto=format&fit=crop" alt="French Press">
+                </div>
+                <div class="product-info">
+                    <h3>French Press 600ml</h3>
+                    <div class="product-origin">Heat-Resistant Glass</div>
+                    <p>Metode seduh celup klasik untuk menghasilkan karakter kopi ber-body tebal dan kaya rasa.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 120.000</span>
+                        <button class="buy-button" onclick="addToCart('French Press 600ml', 120000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Aksesoris</span>
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=85&w=600&auto=format&fit=crop" alt="Gooseneck Kettle">
+                </div>
+                <div class="product-info">
+                    <h3>Gooseneck Kettle</h3>
+                    <div class="product-origin">Leher Angsa Termometer</div>
+                    <p>Ketel air khusus pour-over dengan aliran air yang sangat stabil dan kontrol suhu akurat.</p>
+                    <div class="product-bottom">
+                        <span class="price">Rp 195.000</span>
+                        <button class="buy-button" onclick="addToCart('Gooseneck Kettle', 195000)">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   AI ASSISTANT SECTION (LENGKAP INTERAKTIF)
+========================================================= -->
+<section id="ai-assistant">
+    <div class="container">
+        <div class="ai-box">
+            <div class="ai-header">
+                <div class="ai-title">
+                    <div class="ai-icon">🤖</div>
+                    <div>
+                        <h3>Barista AI Jejak Kopi</h3>
+                        <span>Tanya rekomendasi rasa kopi sesuai selera Anda</span>
+                    </div>
+                </div>
+                <div class="ai-limit">Aktif & Siap Membantu</div>
+            </div>
+            <div class="ai-form">
+                <input type="text" id="aiQuery" placeholder="Contoh: Kopi apa yang paling cocok untuk pemula dan tidak terlalu asam?">
+                <button class="btn btn-primary" onclick="askAiAssistant()">Kirim</button>
+            </div>
+            <div class="ai-result" id="aiResponseContainer">
+                💡 <strong>Tips Barista:</strong> Untuk pemula, kami sangat merekomendasikan <strong>Kintamani Bali</strong> karena memiliki tingkat keasaman yang cerah namun ringan dengan sentuhan rasa buah jeruk segar.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   MEMBERSHIP
+========================================================= -->
+<section id="membership">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Loyalty Program</span>
+            <h2>Membership Jejak Kopi Kita</h2>
+            <p>Dapatkan berbagai keuntungan eksklusif dan diskon spesial untuk setiap pembelian kopi.</p>
+        </div>
+        <div class="membership-grid">
+            <div class="membership-card">
+                <h3>Seduh Regular</h3>
+                <div class="member-price">Gratis <span>/ selamanya</span></div>
+                <ul>
+                    <li>Akses ke seluruh katalog produk</li>
+                    <li>Poin reward setiap pembelian</li>
+                    <li>Newsletter tips & trik seduh mingguan</li>
+                </ul>
+                <button class="btn btn-light" style="width: 100%;">Gabung Sekarang</button>
+            </div>
+            <div class="membership-card featured">
+                <span class="vip-label">TERPOPULER</span>
+                <h3>Jejak VIP Club</h3>
+                <div class="member-price">Rp 99rb <span>/ tahun</span></div>
+                <ul>
+                    <li>Diskon 15% untuk semua biji kopi</li>
+                    <li>Gratis ongkir pengiriman nasional</li>
+                    <li>Undangan eksklusif kelas cupping & seduh</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Daftar VIP Sekarang</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   BREWING SECTION (TIPS SEDUH TREN SAAT INI)
+========================================================= -->
+<section id="brewing">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Panduan & Tips Seduh</span>
+            <h2>Metode Seduh yang Sedang Tren</h2>
+            <p>Eksplorasi cara penyeduhan kopi modern yang sedang digandrungi para penikmat kopi masa kini.</p>
+        </div>
+        <div class="brewing-grid">
+            <div class="brewing-card">
+                <span class="brewing-badge">🔥 Tren Terkini #1</span>
+                <h3>Crystal Eye V60 Pour Over</h3>
+                <p>Teknik seduh manual modern menggunakan dripper bertekstur kristal untuk mengontrol ekstraksi rasa buah yang maksimal.</p>
+                <ul>
+                    <li>Rasio: 1:15 (15g kopi : 225ml air)</li>
+                    <li>Suhu Air: 90°C - 92°C</li>
+                    <li>Waktu Seduh: 2 menit 30 detik</li>
+                </ul>
+            </div>
+            <div class="brewing-card">
+                <span class="brewing-badge">❄️ Tren Terkini #2</span>
+                <h3>Clean Japanese Iced Coffee</h3>
+                <p>Metode seduh panas langsung di atas es batu untuk mengunci aroma bunga dan buah tanpa merusak kejernihan rasa.</p>
+                <ul>
+                    <li>Rasio: 60% Air Panas / 40% Es Batu</li>
+                    <li>Suhu Air: 93°C</li>
+                    <li>Gilingan: Medium-Fine</li>
+                </ul>
+            </div>
+            <div class="brewing-card">
+                <span class="brewing-badge">⏳ Tren Terkini #3</span>
+                <h3>Slow Steeping Cold Brew</h3>
+                <p>Penyeduhan dingin menggunakan air bersuhu ruang atau kulkas selama 12–24 jam untuk menghasilkan kopi minim asam.</p>
+                <ul>
+                    <li>Rasio: 1:10 (Kopi kasar : Air dingin)</li>
+                    <li>Waktu Ekstraksi: 18 - 24 Jam</li>
+                    <li>Karakter: Lembut & Rendah Asam</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   CONTACT SECTION
+========================================================= -->
+<section id="contact">
+    <div class="container contact-section">
+        <div>
+            <span class="section-label" style="color: #f2dfca;">Hubungi Kami</span>
+            <h2>Mari Berkunjung & Berbagi Cerita</h2>
+            <p>Punya pertanyaan seputar biji kopi Nusantara atau ingin berkolaborasi? Tim kami siap melayani Anda setiap hari.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/6283861842063" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="background:#25d366; color:white; text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:10px; font-weight:700;">Chat WhatsApp 📱</a>
+            </div>
+        </div>
+        <div class="contact-info-card">
+            <div class="contact-info-row">
+                <div class="contact-info-icon">📍</div>
+                <div>
+                    <strong>Alamat Kedai</strong>
+                    <span>Jl. Malioboro No. 45, Yogyakarta</span>
+                </div>
+            </div>
+            <div class="contact-info-row">
+                <div class="contact-info-icon">🕒</div>
+                <div>
+                    <strong>Jam Operasional</strong>
+                    <span>Senin - Minggu: 08.00 – 22.30 WIB</span>
+                </div>
+            </div>
+            <div class="contact-info-row">
+                <div class="contact-info-icon">✉️</div>
+                <div>
+                    <strong>Email Resmi</strong>
+                    <span>halo@jejakkopikita.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+   FOOTER
+========================================================= -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Jejak Kopi Kita</h3>
+                <p>Menghadirkan rasa, cerita, dan kehangatan dari biji kopi pilihan seluruh penjuru Nusantara ke cangkir Anda.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Navigasi</h4>
+                <a href="#about">Tentang Kami</a>
+                <a href="#filosofi">Filosofi</a>
+                <a href="#produk">Katalog Produk</a>
+                <a href="#membership">Membership</a>
+            </div>
+            <div class="footer-column">
+                <h4>Dukungan</h4>
+                <a href="#brewing">Tips Seduh</a>
+                <a href="#ai-assistant">Barista AI</a>
+                <a href="#contact">Kontak Kami</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Jejak Kopi Kita. Hak Cipta Dilindungi.</span>
+            <span>Dirancang dengan ❤️ untuk Pencinta Kopi Nusantara</span>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================================
+   MODAL LOGIN
+========================================================= -->
+<div class="modal-overlay" id="loginModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeLogin()">&times;</span>
+        <h3>Masuk Akun</h3>
+        <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label>Email / Nomor WhatsApp</label>
+                <input type="text" id="loginUser" placeholder="contoh: budi@email.com" required>
+            </div>
+            <div class="form-group">
+                <label>Kata Sandi</label>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Masuk Sekarang</button>
+        </form>
+    </div>
+</div>
+
+<!-- =========================================================
+   MODAL KERANJANG BELANJA (SHOPPING CART)
+========================================================= -->
+<div class="modal-overlay" id="cartModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeCart()">&times;</span>
+        <h3>Keranjang Belanja Anda</h3>
+        <div class="cart-items-container" id="cartItemsList">
+            <p style="text-align: center; color: var(--muted); padding: 20px;">Keranjang Anda masih kosong.</p>
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotalPrice">Rp 0</span>
+        </div>
+        <button class="btn btn-primary" id="checkoutBtn" style="width: 100%;" onclick="proceedCheckout()">Checkout (Pesan via WhatsApp)</button>
+    </div>
+</div>
+
+<!-- =========================================================
+   JAVASCRIPT: INTERAKTIFITAS E-COMMERCE, LOGIN & AI
+========================================================= -->
+<script>
+    let cart = [];
+    let isLoggedIn = false;
+    let currentUser = "";
+
+    // Fungsi Tab Katalog Toko (Biji Kopi vs Alat)
+    function switchStoreTab(type) {
+        const coffeeBtn = document.querySelectorAll('.store-tab-btn')[0];
+        const equipBtn = document.querySelectorAll('.store-tab-btn')[1];
+        const coffeeStore = document.getElementById('coffeeStore');
+        const equipmentStore = document.getElementById('equipmentStore');
+
+        if(type === 'coffee') {
+            coffeeBtn.classList.add('active');
+            equipBtn.classList.remove('active');
+            coffeeStore.style.display = 'grid';
+            equipmentStore.style.display = 'none';
+        } else {
+            equipBtn.classList.add('active');
+            coffeeBtn.classList.remove('active');
+            coffeeStore.style.display = 'none';
+            equipmentStore.style.display = 'grid';
+        }
+    }
+
+    // Modal Login
+    function openLogin() {
+        document.getElementById('loginModal').style.display = 'flex';
+    }
+    function closeLogin() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+    function handleLogin(e) {
+        e.preventDefault();
+        const userInput = document.getElementById('loginUser').value;
+        isLoggedIn = true;
+        currentUser = userInput;
+        document.getElementById('loginNavBtn').innerText = "Akun (" + userInput.split('@')[0] + ")";
+        closeLogin();
+        alert("Berhasil masuk! Selamat berbelanja.");
+    }
+
+    // Modal Cart
+    function openCart() {
+        document.getElementById('cartModal').style.display = 'flex';
+        renderCartItems();
+    }
+    function closeCart() {
+        document.getElementById('cartModal').style.display = 'none';
+    }
+
+    // Tambah Produk ke Keranjang
+    function addToCart(name, price) {
+        let found = cart.find(item => item.name === name);
+        if(found) {
+            found.qty += 1;
+        } else {
+            cart.push({ name: name, price: price, qty: 1 });
+        }
+        updateCartBadge();
+        alert(name + " berhasil ditambahkan ke keranjang!");
+    }
+
+    function updateCartBadge() {
+        let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+        document.getElementById('cartBadge').innerText = totalQty;
+    }
+
+    function renderCartItems() {
+        const listContainer = document.getElementById('cartItemsList');
+        const totalPriceContainer = document.getElementById('cartTotalPrice');
+        
+        if(cart.length === 0) {
+            listContainer.innerHTML = '<p style="text-align: center; color: var(--muted); padding: 20px;">Keranjang Anda masih kosong.</p>';
+            totalPriceContainer.innerText = 'Rp 0';
+            return;
+        }
+
+        let html = '';
+        let total = 0;
+        cart.forEach((item, index) => {
+            let subtotal = item.price * item.qty;
+            total += subtotal;
+            html += `
+                <div class="cart-item-row">
+                    <div>
+                        <strong>${item.name}</strong><br>
+                        <small>${item.qty}x @ Rp ${item.price.toLocaleString('id-ID')}</small>
+                    </div>
+                    <div>
+                        <span>Rp ${subtotal.toLocaleString('id-ID')}</span>
+                        <button onclick="removeFromCart(${index})" style="background:none; border:none; color:red; cursor:pointer; margin-left:10px;">✕</button>
+                    </div>
+                </div>
+            `;
+        });
+        listContainer.innerHTML = html;
+        totalPriceContainer.innerText = 'Rp ' + total.toLocaleString('id-ID');
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartBadge();
+        renderCartItems();
+    }
+
+    // Syarat Login Ala Shopee/Zalora untuk Checkout
+    function proceedCheckout() {
+        if(cart.length === 0) {
+            alert("Keranjang belanja Anda masih kosong.");
+            return;
+        }
+
+        if(!isLoggedIn) {
+            alert("Silakan Masuk (Login) terlebih dahulu untuk melanjutkan proses pembelian.");
+            closeCart();
+            openLogin();
+            return;
+        }
+
+        let message = `Halo Jejak Kopi Kita, saya ${currentUser} ingin memesan produk berikut:\n\n`;
+        let total = 0;
+        cart.forEach(item => {
+            message += `- ${item.name} (${item.qty}x) : Rp ${(item.price * item.qty).toLocaleString('id-ID')}\n`;
+            total += (item.price * item.qty);
+        });
+        message += `\nTotal Pembayaran: Rp ${total.toLocaleString('id-ID')}\nMohon informasi pembayarannya. Terima kasih!`;
+
+        let waUrl = `https://wa.me/6283861842063?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank');
+    }
+
+    // Interaktif Sederhana Barista AI
+    function askAiAssistant() {
+        const query = document.getElementById('aiQuery').value.toLowerCase();
+        const responseBox = document.getElementById('aiResponseContainer');
+        
+        if(!query) {
+            responseBox.innerHTML = "💡 <strong>Barista AI:</strong> Silakan ketik pertanyaan seputar kopi terlebih dahulu pada kolom di atas!";
+            return;
+        }
+
+        if(query.includes('pemula') || query.includes('asam')) {
+            responseBox.innerHTML = "💡 <strong>Barista AI:</strong> Berdasarkan pertanyaan Anda, kami menyarankan <strong>Kintamani Bali</strong> karena karakternya ramah untuk pemula dan memiliki keasaman buah yang segar serta ringan.";
+        } else if(query.includes('kuat') || query.includes('pahit') || query.includes('susu')) {
+            responseBox.innerHTML = "💡 <strong>Barista AI:</strong> Untuk rasa yang pekat dan kuat, Anda sangat cocok memilih <strong>Robusta Temanggung</strong> dengan body tebal yang pas dicampur susu.";
+        } else {
+            responseBox.innerHTML = `💡 <strong>Barista AI:</strong> Menanggapi "${query}", kami menyarankan Anda mencoba biji kopi <strong>Gayo Aceh</strong> atau berkonsultasi langsung melalui tombol WhatsApp kami di bawah!`;
+        }
+    }
+</script>
+
+</body>
+</html>
