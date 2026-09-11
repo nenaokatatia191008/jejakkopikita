@@ -148,6 +148,7 @@ header {
 }
 
 .navbar {
+    position: relative;
     min-height: 76px;
     display: flex;
     align-items: center;
@@ -243,6 +244,20 @@ nav a:hover {
 .login-btn:hover {
     background: var(--coffee-dark);
     transform: translateY(-2px);
+}
+
+.hamburger-btn {
+    display: none;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--coffee-dark);
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
 }
 
 .badge-count {
@@ -1162,6 +1177,105 @@ footer {
     flex-wrap: wrap;
     font-size: .75rem;
 }
+
+/* =========================================================
+   RESPONSIVE / TAMPILAN HP & TABLET
+========================================================= */
+@media (max-width: 992px) {
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-image img { height: 360px; }
+    .contact-section { grid-template-columns: 1fr; gap: 32px; }
+    .philosophy-grid { grid-template-columns: repeat(2, 1fr); }
+    .brewing-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        background: var(--cream);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 10px;
+        box-shadow: var(--shadow-hover);
+    }
+
+    nav.mobile-open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 13px 14px;
+    }
+
+    .hamburger-btn {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 768px) {
+    section { padding: 60px 0; }
+    .section-heading { margin-bottom: 40px; }
+
+    .hero { min-height: unset; padding: 130px 0 60px; }
+    .hero-stats { gap: 24px; row-gap: 16px; }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px 0;
+    }
+    .contact-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        justify-content: flex-start;
+        padding-bottom: 16px;
+    }
+    .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .about-badge {
+        position: static;
+        margin: 16px auto 0;
+        max-width: 100%;
+    }
+
+    .membership-grid { grid-template-columns: 1fr; }
+
+    .ai-header { flex-wrap: wrap; gap: 10px; }
+    .ai-form { flex-direction: column; }
+    .ai-form button { width: 100%; }
+
+    .store-tabs { flex-wrap: wrap; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
+
+    .topbar-inner { flex-direction: column; gap: 4px; text-align: center; }
+    .topbar-left, .topbar-right { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .philosophy-grid, .brewing-grid, .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 { letter-spacing: -1px; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .hero-buttons .btn { width: 100%; }
+
+    .navbar { min-height: 64px; }
+    .logo-text { font-size: 1rem; }
+    .login-btn { padding: 0 12px; font-size: .78rem; }
+
+    .modal-content { padding: 22px; }
+}
 </style>
 </head>
 
@@ -1191,7 +1305,7 @@ footer {
             <div class="logo-icon">☕</div>
             <div class="logo-text">Jejak Kopi <span>Kita</span></div>
         </a>
-        <nav>
+        <nav id="mainNav">
             <a href="#about">Tentang</a>
             <a href="#filosofi">Filosofi</a>
             <a href="#produk">Katalog & Alat</a>
@@ -1205,6 +1319,7 @@ footer {
                 🛒 <span class="badge-count" id="cartBadge">0</span>
             </button>
             <button class="login-btn" id="loginNavBtn" onclick="openLogin()">Masuk</button>
+            <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Buka menu">☰</button>
         </div>
     </div>
 </header>
@@ -1723,6 +1838,16 @@ footer {
     let cart = [];
     let isLoggedIn = false;
     let currentUser = "";
+
+    // Menu Mobile (Hamburger)
+    function toggleMobileMenu() {
+        document.getElementById('mainNav').classList.toggle('mobile-open');
+    }
+    document.querySelectorAll('#mainNav a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('mainNav').classList.remove('mobile-open');
+        });
+    });
 
     // Fungsi Tab Katalog Toko (Biji Kopi vs Alat)
     function switchStoreTab(type) {
